@@ -39,8 +39,6 @@ class CompaniesController extends Controller
         return redirect()->route('dashboard')->with('success', 'Company updated successfully!');
     }
 
-
-    
     public function create()
     {
         return view('companies.create');
