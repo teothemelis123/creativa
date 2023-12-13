@@ -65,4 +65,14 @@ public function destroy($id)
 
     return redirect()->route('dashboard')->with('success', 'Employee deleted successfully!');
 }
+
+
+public function show(Employee $employee)
+    {
+        // The $employee parameter is automatically resolved by Laravel's model binding.
+        // It will retrieve the employee based on the {employee} parameter in the route.
+
+        return view('employees.show', compact('employee'));
+    }
+
 }

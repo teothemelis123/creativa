@@ -30,7 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
+Route::get('/companies/{company}', [CompaniesController::class, 'show'])->name('companies.show');
 Route::post('/companies/store/', [CompaniesController::class, 'store'])->name('companies.store');
 Route::get('/companies/create/', [CompaniesController::class, 'create'])->name('companies.create');
 Route::get('/companies/edit/{company}', [CompaniesController::class, 'edit'])->name('companies.edit');
@@ -40,7 +40,7 @@ Route::delete('/companies/{company}', [CompaniesController::class, 'destroy'])->
 Route::get('/employees/create/{company}', [EmployeesController::class, 'create'])->name('employees.create');
 Route::post('/employees/store/{company}', [EmployeesController::class, 'store'])->name('employees.store');
 Route::get('/employees/{employee}/edit', [EmployeesController::class, 'edit'])->name('employees.edit');
-
+Route::get('/employees/{employee}', [EmployeesController::class, 'show'])->name('employees.show');
 Route::put('/employees/{employee}', [EmployeesController::class, 'update'])->name('employees.update');
 Route::delete('/employees/{employee}', [EmployeesController::class, 'destroy'])->name('employees.destroy');
 

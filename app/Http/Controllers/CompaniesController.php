@@ -87,5 +87,11 @@ public function index()
     return view('dashboard', compact('companies'));
 }
 
+
+public function show(Company $company)
+{
+    return view('companies.show', compact('company'));
+}
+
 }
 ?>

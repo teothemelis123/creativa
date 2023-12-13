@@ -130,3 +130,20 @@ main a {
 input {
     color:black!important;
 }
+
+
+.grid {
+    display: grid;
+}
+
+.grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.text-2xl {
+    font-size: 1.5rem;
+}

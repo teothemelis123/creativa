@@ -13,8 +13,10 @@
                                         {{ $company->name }}
                                     </div>
                                     <div class="flex">
-                                        <a href="{{ route('companies.edit', ['company' => $company->id]) }}" class="px-2 py-1 text-xs bg-blue-500 text-white rounded hover:underline">Edit</a>
+                                        <a href="{{ route('companies.edit', ['company' => $company->id]) }}" class="ml-2 px-2 py-1 text-xs bg-blue-500 text-white rounded hover:underline">Edit</a>
+                                        <a href="{{ route('companies.show', ['company' => $company->id]) }}" class="ml-2 px-2 py-1 text-xs bg-blue-500 text-white rounded hover:underline">Show</a>
                                         <form action="{{ route('companies.destroy', ['company' => $company->id]) }}" method="post" class="ml-2">
+
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="px-2 py-1 text-xs bg-red-500 text-white rounded hover:underline">Delete</button>
@@ -47,7 +49,7 @@
                                     class="hidden mt-2 space-y-2"
                                 >
                                     @foreach($company->employees as $employee)
-                                        <div class="pl-6 flex">{{ $employee->first_name }} {{ $employee->last_name }} <a href="{{ route('employees.edit', ['employee' => $employee->id]) }}" class="ml-2 px-2 py-1 text-xs bg-yellow-500 text-yellow rounded hover:underline">Edit Employee</a> <form action="{{ route('employees.destroy', ['employee' => $employee->id]) }}" method="post">
+                                        <div class="pl-6 flex">{{ $employee->first_name }} {{ $employee->last_name }} <a href="{{ route('employees.edit', ['employee' => $employee->id]) }}" class="ml-2 px-2 py-1 text-xs bg-yellow-500 text-yellow rounded hover:underline">Edit Employee</a> <a href="{{ route('employees.show', ['employee' => $company->id]) }}" class="ml-2 px-2 py-1 text-xs bg-green-500 text-white rounded hover:underline">Show</a><form action="{{ route('employees.destroy', ['employee' => $employee->id]) }}" method="post">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="px-2 py-1 ml-2 text-xs bg-red-500 text-white rounded hover:underline">Delete Employee</button>
